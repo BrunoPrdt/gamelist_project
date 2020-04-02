@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import PureComponent from './Components/PureComponent';
+import {PureComponent} from './Components/PureComponent';
+import {FunctionalPropsComponent} from './Components/PureComponent';
+import ClassComponent from "./Components/ClassComponent";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           Learn React
         </a>
       <PureComponent />
+      <FunctionalPropsComponent test1={'la première props'}/>
+      <ClassComponent test2={'voici la props test2'}/>
       </header>
     </div>
   );

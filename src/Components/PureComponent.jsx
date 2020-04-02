@@ -6,12 +6,21 @@
 import React from "react";
 import './PureComponent.css';
 
-function PureComponent() {
+export function PureComponent() {
     return (
         <div>
-            <h6 className={'purecomponent-h6'}>Pure Compo</h6>
+            <h6 className={'purecomponent-h6'}>Composant fonctionnel sans props</h6>
         </div>
     )
 }
 
-export default PureComponent
+export function FunctionalPropsComponent(props) {
+    return (
+        <div>
+            <h6 className={'purecomponent-h6'}>Composant fonctionnel avec props : {props.test1}</h6>
+        </div>
+    )
+}
+
+
+//export default PureComponent;
