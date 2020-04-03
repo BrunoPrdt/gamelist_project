@@ -4,6 +4,7 @@ import './App.css';
 import {PureComponent} from './Components/PureComponent';
 import {FunctionalPropsComponent} from './Components/PureComponent';
 import ClassComponent from "./Components/ClassComponent";
+import CompoCycleOfLife from "./Components/CompoCycleOfLife";
 
 class App extends React.Component {
 
@@ -26,17 +27,20 @@ class App extends React.Component {
       return (
           <div className="App">
               <header className="App-header">
-                  <div>
+                  <CompoCycleOfLife />
+                  <img src={logo} className="App-logo" alt="logo" />
+                  {this.state.testAppState?
+                      <div>
                       <p>Voici les utilisateurs de cette session:</p>
                       <ul>
-                          {myLabels.map( (label) =>  <li>{label}</li>  ) }
+                          {myLabels.map( (label) =>  <li key={label}>{label}</li>  ) }
                       </ul>
-                  </div>
-                  <img src={logo} className="App-logo" alt="logo" />
-                  {this.state.testAppState? <div></div> :
                       <p>
                           Edit <code>src/App.js</code> and save to reload.
-                      </p>}
+                      </p>
+                    </div> : <div></div>
+
+                  }
                   <a
                       className="App-link"
                       href="https://reactjs.org"

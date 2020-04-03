@@ -19,7 +19,7 @@ class ClassComponent extends React.Component{
     handleChange = (e) => {
         //const value1 = e.target.value; // ou :
         const value2 = e.currentTarget.value;
-        console.log(value2);
+        //console.log(value2);
         this.setState({nom: value2});
         this.props.onInputChange(e.currentTarget.value);// pour remonter notre val au composant app si on veut s'en servir ailleurs
     };
@@ -28,8 +28,8 @@ class ClassComponent extends React.Component{
         return(
             <div>
                 <h6 className={'classcomponent-h6'}>Je suis un composant avec son state, je passe une props : {this.props.test2}<br/>
-                J'ai  également une props lié mon state composant : {this.state.nom}<br/>
-                Et la même props-state remontée de mon composant vers App : {this.props.nomApp}</h6>
+                    J'ai  également une props lié mon state composant : {this.state.nom}<br/>
+                    Et la même props-state remontée de mon composant vers App : {this.props.nomApp}</h6>
                 <input type={'text'} value={this.state.nom} onChange={this.handleChange}/>
             </div>
         )
