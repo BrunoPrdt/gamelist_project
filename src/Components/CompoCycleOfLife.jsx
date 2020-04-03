@@ -10,9 +10,8 @@ class CompoCycleOfLife extends React.Component{
         super(props);//c'est pour le passer au parent
         console.log('Je passe dans le constructeur');
     }
-    componentWillMount() {
-        console.log('Je passe dans le componentWillMount');
-    }
+
+    //componentWilMount est deprecie
 
     render() {
         console.log('Je passe dans le render');
@@ -21,6 +20,15 @@ class CompoCycleOfLife extends React.Component{
                 {/* <h6 className={'classcomponent-h6'}>Je suis le composant de cycle de vie</h6>*/}
             </div>
         )
+    }
+    componentDidMount() {
+        console.log('Je passe dans le componentDidMount');
+    }
+    //componentWillReceiveProps(nextProps, nextContext) { //is deprecated
+    //}
+    shouldComponentUpdate(nextProps, nextState, nextContext) {//on decide av true ou false si on effectue le rendu du compo
+    }
+    UNSAFE_componentWillUpdate(nextProps, nextState, nextContext) {//componentWillUpdate has been renamed, and is not recommended for use.
     }
 }
 
