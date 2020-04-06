@@ -1,22 +1,22 @@
 /**
  * @author Bruno
  * Licence
- * First component
+ * Fourth component
  */
 import React from "react";
 
-class FilterableGamesTable extends React.Component{
+class GameCategory extends React.Component{
     constructor(props) {
         super(props);
         this.state = {};
     }
     render() {
         return (
-            <div>
-                FilterableGamesTable
+            <div style={{backgroundColor: "orange"}}>
+                GameCategory
             </div>
         )
     }
 }
 
-export default FilterableGamesTable
+export default GameCategory

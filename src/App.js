@@ -1,10 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {PureComponent} from './Components/PureComponent';
-import {FunctionalPropsComponent} from './Components/PureComponent';
-import ClassComponent from "./Components/ClassComponent";
-import CompoCycleOfLife from "./Components/CompoCycleOfLife";
+
+import FilterableGamesTable from "./Components/Game/FilterableGamesTable";
 
 class App extends React.Component {
 
@@ -17,30 +15,20 @@ class App extends React.Component {
     };
 
   render() {
-      let myLabels = [];
-      myLabels.push('bruno');
-      myLabels.push('énora');
-      myLabels.push('nila');
-      myLabels.push('papy');
-      myLabels.push('mamie');
+      const GAMES = [];
+      GAMES.push({category: 'FPS', price: '10€', stoked: true, name: 'Counter Strike'});
+      GAMES.push({category: 'FPS', price: '40€', stoked: false, name: 'BattleField'});
+      GAMES.push({category: 'FPS', price: '20€', stoked: true, name: 'PUBG'});
+      GAMES.push({category: 'Adventure', price: '10€', stoked: true, name: 'Uncharted'});
+      GAMES.push({category: 'Adventure', price: '70€', stoked: false, name: 'The Last of US part 2'});
+      GAMES.push({category: 'Adventure', price: '50€', stoked: true, name: 'God of War'});
+      GAMES.push({category: 'Adventure', price: '70€', stoked: true, name: 'Death Stranding'});
 
       return (
           <div className="App">
               <header className="App-header">
-                  <CompoCycleOfLife />
+                  <FilterableGamesTable games={GAMES} />
                   <img src={logo} className="App-logo" alt="logo" />
-                  {this.state.testAppState?
-                      <div>
-                      <p>Voici les utilisateurs de cette session:</p>
-                      <ul>
-                          {myLabels.map( (label) =>  <li key={label}>{label}</li>  ) }
-                      </ul>
-                      <p>
-                          Edit <code>src/App.js</code> and save to reload.
-                      </p>
-                    </div> : <div></div>
-
-                  }
                   <a
                       className="App-link"
                       href="https://reactjs.org"
@@ -49,9 +37,6 @@ class App extends React.Component {
                   >
                       Learn React
                   </a>
-                  <PureComponent />
-                  <FunctionalPropsComponent test1={'la première props'}/>
-                  <ClassComponent test2={'voici la props test2'} onInputChange={this.onInputChange} nomApp={this.state.testAppState}/>
               </header>
           </div>
       );
