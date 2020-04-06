@@ -1,5 +1,5 @@
 /**
- * @author Bruno
+ * @author Bruno Prédot
  * Licence
  * Second component
  */
@@ -9,15 +9,14 @@ class SearchCompo extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {};
     }
 
     handleFilterTextChange = (e) => {
-        console.log(e.target.value);
+        this.props.handleFilterTextChange(e.target.value);
     };
 
     handleInStockChange = (e) => {
-        console.log(e.currentTarget.checked);
+        this.props.handleInStockChange(e.target.checked);
     };
 
     render() {
@@ -25,11 +24,13 @@ class SearchCompo extends React.Component{
             <div style={{backgroundColor: "indianred"}}>
                 <input
                     type="text"
-                    placeholder={'search'}
+                    placeholder={'search (minuscule only) '}
+                    //text = {this.props.filterText}
                     onChange={this.handleFilterTextChange}
                 />
                 <input
                     type="checkbox"
+                    checked={this.props.inStockOnly}
                     onChange={this.handleInStockChange}
                 />
                 {' '} Produits en stock seulement.

@@ -1,5 +1,5 @@
 /**
- * @author Bruno
+ * @author Bruno Prédot
  * Licence
  * Third component
  */
@@ -13,11 +13,27 @@ class GameTable extends React.Component{
         this.state = {};
     }
     render() {
-
+        const filterText = this.props.filterText;
+        const inStockOnly = this.props.inStockOnly;
+        let lastCat;
         const rows = [];
         let key = 1;
-            this.props.games.forEach(jeu => {
+
+        this.props.games.forEach(jeu => {
+
+            if (jeu.name.toLowerCase().indexOf(filterText) === -1) {
+                return;
+            }
+
+            if (inStockOnly && !jeu.stocked) {
+                return;
+            }
+            if (jeu.category !== lastCat) {
+                rows.push(<GameCategory category={ jeu.category}/>)
+            }
             rows.push(<GameRow key={key} game={jeu}/>);
+            lastCat = jeu.category;
+
             key++;
         });
 

@@ -1,5 +1,5 @@
 /**
- * @author Bruno
+ * @author Bruno Prédot
  * Licence
  * Fourth component
  */
@@ -8,13 +8,14 @@ import React from "react";
 class GameCategory extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {};
     }
     render() {
         return (
-            <div style={{backgroundColor: "orange"}}>
-                GameCategory
-            </div>
+            <tr style={{backgroundColor: "orange"}}>
+                <th colSpan={2}>
+                    {this.props.category}
+                </th>
+            </tr>
         )
     }
 }

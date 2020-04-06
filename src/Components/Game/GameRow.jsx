@@ -1,5 +1,5 @@
 /**
- * @author Bruno
+ * @author Bruno Prédot
  * Licence
  * Fifth component
  */
@@ -9,11 +9,10 @@ class GameRow extends React.Component{
     constructor(props) {
         super(props);
         this.state = {};
-        //console.log('Le jeu', props.game.name)
     }
     render() {
         let name;
-        if (this.props.game.stoked) {
+        if (this.props.game.stocked) {
             name = this.props.game.name;
         } else {
             name = <span style={{color: "red"}}>{this.props.game.name};</span>
