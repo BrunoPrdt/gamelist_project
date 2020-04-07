@@ -1,5 +1,5 @@
 /**
- * @author Bruno Prédot
+ * @author Bruno Prdt
  * Licence
  * Fifth component
  */

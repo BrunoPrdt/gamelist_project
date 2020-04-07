@@ -1,5 +1,5 @@
 /**
- * @author Bruno
+ * @author Bruno Prdt
  * Licence none
  * First pure React component
  */
