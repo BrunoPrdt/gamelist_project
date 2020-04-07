@@ -30,8 +30,8 @@ class FilterableGamesTable extends React.Component{
 
         return (
 
-            <div style={{backgroundColor: "dodgerblue"}}>
-                FilterableGamesTable
+            <div>
+                <h1>FilterableGamesTable</h1>
                 <SearchCompo
                     filterText={this.state.filterText}
                     inStockOnly={this.state.inStockOnly}

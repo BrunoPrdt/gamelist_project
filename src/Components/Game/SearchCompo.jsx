@@ -24,7 +24,7 @@ class SearchCompo extends React.Component{
             <div style={{backgroundColor: "indianred"}}>
                 <input
                     type="text"
-                    placeholder={'search (minuscule only) '}
+                    placeholder={'search (lowercase only) '}
                     //text = {this.props.filterText}
                     onChange={this.handleFilterTextChange}
                 />
